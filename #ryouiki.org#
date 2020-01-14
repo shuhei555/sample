@@ -1,0 +1,24 @@
+#+STARTUP: indent nolineimages
+* head
+- ヘルプのサンプル雛形
+-   headに常に表示される内容を記述
+* license
+-      cc by Shigeto R. Nishitani, 2016
+* item_example
+- itemの例
+my_help(ユーザー独自のメモを作成できるソフト)
+特徴
+BDDとはTDDよりも振る舞いという点に重きを置いたもの
+振る舞いとはプログラムを実行した際に行われる動作のこと
+
+    def edit_help(file)
+      p target_help = File.join(@local_help_dir,file+'.org')
+      if local_help_entries.member?(file+'.org')
+        system "emacs #{target_help}"
+      else
+        puts "file #{target_help} does not exits in #{@local_help_dir}."
+        puts "init #{file} first."
+      end
+    end
+例えばmy_helpにはedit(編集)機能があり，これを実行すると，「ファイルを開く」と「文字を返す」という2つの動作が行われる
+
